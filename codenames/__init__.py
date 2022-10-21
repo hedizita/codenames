@@ -1,3 +1,4 @@
+from .teammate import prompt_for_teammate
 from .teammate import prompt_for_teammate_after_response
 from .teammate import parse_teammate_response
 
