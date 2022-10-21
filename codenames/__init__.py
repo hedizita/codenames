@@ -4,6 +4,8 @@ from .teammate import parse_teammate_response
 
 from .board import generate_codewords_board
 
+from .game_round import teammates_guess
+
 from .codemaster import prompt_for_codemaster
 from .codemaster import parse_codemaster_response
 
