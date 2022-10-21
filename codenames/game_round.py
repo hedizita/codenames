@@ -13,8 +13,8 @@ def teammates_guess(clue_word, number_of_guesses, cards):
 
     inverted_cards = {}
     for team_name, cards_for_team in cards.items():
-    for card_text in cards_for_team:
-        inverted_cards[card_text] = team_name
+        for card_text in cards_for_team:
+            inverted_cards[card_text] = team_name
 
     while number_of_guesses > 0:
         response = openai.Completion.create(
