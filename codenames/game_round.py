@@ -1,4 +1,6 @@
 import openai
+from .teammate import prompt_for_teammate
+from .teammate import prompt_for_teammate_after_response
 
 
 def teammates_guess(clue_word, number_of_guesses, cards):
