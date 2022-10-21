@@ -1,7 +1,7 @@
 import openai
 
 
-def teamates_guess(clue_word, number_of_guesses, cards):
+def teammates_guess(clue_word, number_of_guesses, cards):
     prompts = []
     responses = []
     init_prompt = prompt_for_teammate(cards, clue_word, number_of_guesses)
