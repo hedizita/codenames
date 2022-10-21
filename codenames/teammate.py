@@ -1,13 +1,3 @@
-def prompt_for_teammate_after_response(response):
-  prompt = f"""{response}"""
-  return prompt
-
-
-def parse_teammate_response(response_text):
-  tokens = [token for token in re.split('[-, \n]', response_text) if token!='']
-  return tokens[0]
-
-
 def prompt_for_teammate(cards, clue_word, number):
   prompt = f"""You are playing the boardgame Codenames. You are the teammate.
 
@@ -21,3 +11,13 @@ Your guess is:
 """
 
   return prompt
+
+
+def prompt_for_teammate_after_response(response):
+  prompt = f"""{response}"""
+  return prompt
+
+
+def parse_teammate_response(response_text):
+  tokens = [token for token in re.split('[-, \n]', response_text) if token!='']
+  return tokens[0]
