@@ -13,3 +13,10 @@ You also give a number between 1 and 3, this is the number of words your clue re
 
 Your response (clue word and number separated by comma):"""
   return prompt
+
+
+def parse_codemaster_response(response_text):
+  response_text = response_text.replace(',', ' ')
+  s1, s2 = map(str, response_text.split())
+  s1 = s1.replace(',', '')
+  return s1, int(s2)
