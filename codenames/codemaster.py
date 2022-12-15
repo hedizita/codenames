@@ -1,7 +1,7 @@
 import re
 
 
-def prompt_for_codemaster(board_cards, team):
+def prompt_for_codemaster(cards, team):
     opponent = {'red': 'blue', 'blue': 'red'}
     prompt = f"""You are playing Codenames, you are the Codemaster.
 Find clue word that is related to words from Group A but not related to words from Group B or the Bomb words or the Neutral words.
