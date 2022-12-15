@@ -2,6 +2,10 @@ import codenames
 from codenames.codemaster import prompt_for_codemaster
 import openai
 
+from codenames.game_round import teammates_guess
+with open("openaikey.txt", "r") as f:
+    openai.api_key = f.read().strip()
+
 
 cards = codenames.generate_codewords_board(codenames.EASY_WORDS, 3, 3, 3, 1)
 codemaster_prompt = prompt_for_codemaster(cards, "blue")
@@ -19,3 +23,6 @@ response = openai.Completion.create(
 
 clue_word, number = codenames.parse_codemaster_response(response['choices'][0]['text'])
 print(clue_word, number)
+
+winnning, prompts, responses = teammates_guess(clue_word, number, cards)
+print(winnning, prompts, responses)
