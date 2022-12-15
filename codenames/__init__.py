@@ -7,5 +7,5 @@ from .teammate import prompt_for_teammate
 from .teammate import prompt_for_teammate_after_response
 from .board import EASY_WORDS, MEDIUM_WORDS, HARD_WORDS
 
-__version_info__ = (0, 0, 2)
+__version_info__ = (0, 0, 3)
 __version__ = '.'.join(map(str, __version_info__))
