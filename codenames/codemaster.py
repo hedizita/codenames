@@ -1,3 +1,6 @@
+import re
+
+
 def prompt_for_codemaster(board_cards, team):
     opponent = {'red': 'blue', 'blue': 'red'}
     prompt = f"""You are playing Codenames, you are the Codemaster.
@@ -16,7 +19,7 @@ Your response (clue word and number separated by comma):"""
 
 
 def parse_codemaster_response(response_text):
-    response_text = response_text.replace(',', ' ')
-    s1, s2 = map(str, response_text.split())
-    s1 = s1.replace(',', '')
+    match = re.match(r'\s*(\b[\w-]+\b)[,;\s]+(\b\d+\b)', response_text)
+    s1, s2 = match.groups()
+    s2 = int(s2)
     return s1, int(s2)
