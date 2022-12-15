@@ -1,6 +1,8 @@
 import codenames
 from codenames.codemaster import prompt_for_codemaster
 import openai
+import json
+
 
 from codenames.game_round import teammates_guess
 with open("openaikey.txt", "r") as f:
@@ -22,7 +24,13 @@ response = openai.Completion.create(
 )
 
 clue_word, number = codenames.parse_codemaster_response(response['choices'][0]['text'])
-print(clue_word, number)
+#print(clue_word, number)
 
 winnning, prompts, responses = teammates_guess(clue_word, number, cards)
-print(winnning, prompts, responses)
+#print(winnning, prompts, responses)
+
+
+blob = {"cards" : cards, "clue_word" : clue_word, "number" : number, "winning" : winnning, "prompts" : prompts, "responses" : responses}
+
+with open("rounds.json", "a") as e:
+    e.write(json.dumps(blob))
