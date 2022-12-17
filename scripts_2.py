@@ -37,3 +37,4 @@ for i in range(10):
 
     with open("rounds_medium.json", "a") as e:
         e.write(json.dumps(blob) +'\n')
+        
