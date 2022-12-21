@@ -9,8 +9,8 @@ with open("openaikey.txt", "r") as f:
     openai.api_key = f.read().strip()
 
 
-for i in range(100):
-    cards = codenames.generate_codewords_board(codenames.MEDIUM_WORDS, 3, 3, 3, 1)
+for i in range(10):
+    cards = codenames.generate_codewords_board(codenames.HARD_WORDS, 3, 3, 3, 1)
     codemaster_prompt = prompt_for_codemaster(cards, "blue")
 
 
@@ -35,6 +35,5 @@ for i in range(100):
 
 
 
-    with open("rounds_medium.json", "a") as e:
+    with open("rounds_hard.json", "a") as e:
         e.write(json.dumps(blob) +'\n')
-        
