@@ -20,7 +20,7 @@ Your response (clue word and number separated by comma):"""
 
 def parse_codemaster_response(response_text):
     try:
-        match = re.match(r'\s*(\b[\w-]+\b)[,;\s]+(\b\d+\b)', response_text)
+        match = re.match(r'\s*(\b[\w]+[- ]?[\w]*\b)[,;\s]+(\b\d+\b)', response_text)
         s1,s2 = match.groups()
     except:
         raise ValueError('Badly formed codemaster response: {}'.format(response_text))
