@@ -20,7 +20,7 @@ def teammates_guess(clue_word, number_of_guesses, cards):
 
     while number_of_guesses > 0:
         response = openai.Completion.create(
-            model="text-davinci-003",
+            model= "davinci:ft-university-of-cambridge:codenames-2023-01-16-11-18-30",
             prompt=init_prompt,
             temperature=0.7,
             max_tokens=6,
